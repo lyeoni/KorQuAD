@@ -7,7 +7,11 @@ To get official scores on the KorQuAD test set, we must submit(or upload) our mo
 
 Here's a detailed process that guides you through the official evaluation of our model.
 
-### Process
+### 1. Create a CodaLab account
+[here](https://worksheets.codalab.org/)
+<p align="center">
+<img src="https://github.com/lyeoni/KorQuAD/blob/master/images/codalab_signup.png" />
+</p>
 
 ## References
 - [LG CNS AI Research Team] [KorQuAD, The Korean Question Answering Dataset](https://korquad.github.io/)
