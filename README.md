@@ -9,14 +9,22 @@ Here's a detailed process that guides you through the official evaluation of our
 
 ### 0. Create a CodaLab account
 You can create a CodaLab account [here](https://worksheets.codalab.org/).
-Click `sign up` in the upper-right corner of the CodaLab homepage.
+Click `sign up` in the top-right corner of the CodaLab homepage.
 
 <p align="center">
 <img src="https://github.com/lyeoni/KorQuAD/blob/master/images/codalab_signup.png" />
 </p>
 
 ### 1. Create a CodaLab worksheet
-Click the `New Worksheet` button on the top-right corner and name your worksheet.
+Click the `My dashboard` in the top-right corner.
+<p align="center">
+<img src="https://github.com/lyeoni/KorQuAD/blob/master/images/codalab_dashboard.png" />
+</p>
+
+Click the `New Worksheet` in the upper-right corner and name your worksheet.
+<p align="center">
+<img src="https://github.com/lyeoni/KorQuAD/blob/master/images/codalab_worksheet.png" />
+</p>
 
 ### 2. Upload trained model with source code
 CodaLab requires us that the prediction python script should run with the following arguments. Therefore, if your python script does not run with the following arguments, the script needs to be modified.
@@ -55,7 +63,7 @@ CodaLab> cl run <command> --request-docker-image lyeoni/pytorch_pretrained_bert
 #### Running jobs that use GPUs
 If you run the following command on the default Docker image(codalab/ubuntu:1.9), the GPU is not available because the image does not support CUDA.
 ```
-CodaLab> cl run :test.py "python test.py"
+CodaLab> cl run :check_cuda.py "python check_cuda.py"
 
 # stdout>
 # ('Python Version: ', '2.7.12')
@@ -66,7 +74,7 @@ CodaLab> cl run :test.py "python test.py"
 
 That's why you need to include the `--request-gpus` flag.
 ```
-CodaLab> cl run :test.py "python test.py" --request-gpus 1
+CodaLab> cl run :check_cuda.py "python check_cuda.py" --request-gpus 1
 
 # stdout>
 # ('Python Version: ', '2.7.12')
