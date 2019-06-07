@@ -1,10 +1,19 @@
 # KorQuAD
-QA system for KorQuAD (Korean Question Answering Dataset) using BERT
- 
-## Submission
+[huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) repository contains op-for-op PyTorch reimplementations, pre-trained models and fine-tuning examples for Google's BERT model.
+And as a result of submission using the **run_squad.py** code provided by [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) repository, it ranked 31st in the test set with EM= 71.11, F1= 89.34, respectively, as shown below. (2019.06.05)
+
+<p align="center">
+<img src="https://github.com/lyeoni/KorQuAD/blob/master/images/leaderboard.png" />
+</p>
+
+A trained BERT model is publicly available. So, I'm going to cover **the process of submitting** a model and result for official evaluation on KorQuAD. Once your model has been evaluated officially, your scores will be added to the [leaderboard](https://korquad.github.io/). Thus I would assume you already completed model training in KorQuAD, and have a trained model archive.
+
+## Submission Process
 To get official scores on the KorQuAD test set, we must submit(or upload) our model to the [CodaLab](https://worksheets.codalab.org/). This is because the integrity of test results should be preserved.
 
 Here's a detailed process that guides you through the official evaluation of our model.
+
+<br>
 
 ### 0. Create a CodaLab account
 You can create a CodaLab account [here](https://worksheets.codalab.org/).
@@ -13,6 +22,8 @@ Click `sign up` in the top-right corner of the CodaLab homepage.
 <p align="center">
 <img src="https://github.com/lyeoni/KorQuAD/blob/master/images/codalab_signup.png" />
 </p>
+
+<br>
 
 ### 1. Create a CodaLab worksheet
 Click the `My dashboard` in the top-right corner.
@@ -24,6 +35,8 @@ Click the `New Worksheet` in the upper-right corner and name your worksheet.
 <p align="center">
 <img src="https://github.com/lyeoni/KorQuAD/blob/master/images/codalab_worksheet.png" />
 </p>
+
+<br>
 
 ### 2. Upload trained model with source code
 Begin by uploading archive for the trained model onto Codalab.
@@ -39,6 +52,8 @@ CodaLab requires us that the prediction python script should run with the follow
 ```
 CodaLab> python <path-to-prediction-python-script> <input-data-json-file> <output-prediction-json-file>
 ```
+
+<br>
 
 ### 3. Run your trained model on the dev set
 Copy the dev data to the worksheet by using the following command into the CodaLab terminal. Do not upload the dev data directly!
@@ -114,6 +129,8 @@ CodaLab> cl run :check_cuda.py "python check_cuda.py" --request-docker-image lye
 CodaLab> cl run :config.json :vocab.txt :pytorch_model.bin :KorQuAD_v1.0_dev.json :run_korquad.py "python run_korquad.py KorQuAD_v1.0_dev.json predictions.json" -n run-predictions --request-docker-image lyeoni/pytorch_pretrained_bert --request-gpus 1 --request-memory 11g
 ```
 
+<br>
+
 ### 4. Evaluate the predictions on the dev set
 If the bundle state is **ready** not failed, we extract out the predictions file into a bundle of its own. Let's do this as follows:
 ```
@@ -127,6 +144,8 @@ CodaLab> cl macro korquad-utils/dev-evaluate-v1.0 predictions-{MODELNAME}
 ```
 
 Once this succeeds, you should see the scores for your model appended to the worksheet.
+
+<br>
 
 ## References
 - [LG CNS AI Research Team] [KorQuAD, The Korean Question Answering Dataset](https://korquad.github.io/)
