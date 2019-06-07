@@ -97,7 +97,7 @@ CodaLab> cl run :check_cuda.py "python check_cuda.py" --request-gpus 1 --request
 ```
 
 
-Now, all jobs (e.g. prediction) can be conducted on a GPU.
+Now, all jobs (e.g., prediction) can be conducted on a GPU.
 
 #### Specifying Environments with Docker
 CodaLab uses Docker containers to define the environment of a run bundle. Each Docker container is based on a Docker image, which specifies the full environment, including which Linux kernel version, which libraries, etc. The default Docekr image is `codalab/ubuntu:1.9`, which consists of Ubuntu 14.04 plus some standard packages (e.g., Python).
@@ -147,11 +147,30 @@ Once this succeeds, you should see the scores for your model appended to the wor
 
 <br>
 
+### 5. Submission
+Follow the submission guide provided in the official site.
+
+This step requires only a formatted descriptions(e.g., model name, your name, institution, etc.) to add an official leaderboard.
+
+- [KorQuAD Submission Guide (English Ver.)](https://worksheets.codalab.org/worksheets/0xee93409b823f436d88741ab115403559/)
+- [KorQuAD Submission Guide (Korean Ver.)](https://worksheets.codalab.org/worksheets/0x7b06f2ebd0584748a3a281018e7d19b0/)
+
+## Appendix
+- In CodaLab, each run has a state, which evolves through the following values:
+  - `created` : initial state
+  - `staged` : for run bundles, meaning dependencies are ready
+  - `preparing` : launch a worker just for this run, waiting for it
+  - `running` : a worker is running the command
+  - `ready/failed` : terminal states corresponding to a successful or unsuccessful run
+
+
 ## References
 - [LG CNS AI Research Team] [KorQuAD, The Korean Question Answering Dataset](https://korquad.github.io/)
 - [LG CNS AI Research Team] [KorQuAD Submission Guide (English Ver.)](https://worksheets.codalab.org/worksheets/0xee93409b823f436d88741ab115403559/)
+- [LG CNS AI Research Team] [KorQuAD Submission Guide (Korean Ver.)](https://worksheets.codalab.org/worksheets/0x7b06f2ebd0584748a3a281018e7d19b0/)
 - [CodaLab] [CodaLab, A collaborative platform for reproducible research](https://worksheets.codalab.org/)
 - [codalab/codalab-worksheets] [Execution](https://github.com/codalab/codalab-worksheets/wiki/Execution)
+- [codalab/codalab-worksheets] [CLI Reference](https://github.com/codalab/codalab-worksheets/wiki/CLI-Reference)
 - [anibali/docker-pytorch] [PyTorch Docker image](https://github.com/anibali/docker-pytorch)
 - [huggingface/pytorch-pretrained-BERT] [PyTorch Pretrained BERT: The Big & Extending Repository of pretrained Transformers](https://github.com/huggingface/pytorch-pretrained-BERT)
 - [lyeoni/pytorch_pretrained_bert] [Docker image with pyotrch and pretrained_bert](https://cloud.docker.com/repository/docker/lyeoni/pytorch_pretrained_bert)
