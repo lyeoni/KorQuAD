@@ -3,7 +3,7 @@
 And as a result of submission using the **run_squad.py** code provided by [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) repository, it ranked 31st in the test set with EM= 71.11, F1= 89.34, respectively, as shown below. (2019.06.05)
 
 <p align="center">
-<img src="https://github.com/lyeoni/KorQuAD/blob/master/images/leaderboard.png" />
+<img height=50 src="https://github.com/lyeoni/KorQuAD/blob/master/images/leaderboard.png" />
 </p>
 
 A trained BERT model is publicly available. So, I'm going to cover **the process of submitting** a model and result for official evaluation on KorQuAD. Once your model has been evaluated officially, your scores will be added to the [leaderboard](https://korquad.github.io/). Thus I would assume you already completed model training in KorQuAD, and have a trained model archive.
