@@ -155,6 +155,8 @@ This step requires only a formatted descriptions(e.g., model name, your name, in
 - [KorQuAD Submission Guide (English Ver.)](https://worksheets.codalab.org/worksheets/0xee93409b823f436d88741ab115403559/)
 - [KorQuAD Submission Guide (Korean Ver.)](https://worksheets.codalab.org/worksheets/0x7b06f2ebd0584748a3a281018e7d19b0/)
 
+<br>
+
 ## Appendix
 - In CodaLab, each run has a state, which evolves through the following values:
   - `created` : initial state
@@ -163,6 +165,7 @@ This step requires only a formatted descriptions(e.g., model name, your name, in
   - `running` : a worker is running the command
   - `ready/failed` : terminal states corresponding to a successful or unsuccessful run
 
+<br>
 
 ## References
 - [LG CNS AI Research Team] [KorQuAD, The Korean Question Answering Dataset](https://korquad.github.io/)
