@@ -167,6 +167,13 @@ Follow the submission guide provided in the official site. This step requires on
   - `running` : a worker is running the command
   - `ready/failed` : terminal states corresponding to a successful or unsuccessful run
 
+<!-- - What I trained:
+  |Model|EM(dev)|F1(dev)|ranked|
+  |---|---|---|---|
+  |BERT-Multilingual(max_seq_length=512)|70.107|90.026|29th (2nd submission)|
+  |BERT-Multilingual(max_seq_length=512, train_batch_size=16)|70.107|89.613|-| -->
+
+
 ## References
 - [LG CNS AI Research Team] [KorQuAD, The Korean Question Answering Dataset](https://korquad.github.io/)
 - [LG CNS AI Research Team] [KorQuAD Submission Guide (English Ver.)](https://worksheets.codalab.org/worksheets/0xee93409b823f436d88741ab115403559/)
@@ -176,4 +183,5 @@ Follow the submission guide provided in the official site. This step requires on
 - [codalab/codalab-worksheets] [CLI Reference](https://github.com/codalab/codalab-worksheets/wiki/CLI-Reference)
 - [anibali/docker-pytorch] [PyTorch Docker image](https://github.com/anibali/docker-pytorch)
 - [huggingface/pytorch-pretrained-BERT] [PyTorch Pretrained BERT: The Big & Extending Repository of pretrained Transformers](https://github.com/huggingface/pytorch-pretrained-BERT)
+- [huggingface/pytorch-pretrained-BERT] [Fixing issue "Training beyond specified 't_total' steps with schedule 'warmup_linear'" reported in #556 #604](https://github.com/huggingface/pytorch-pretrained-BERT/pull/604)
 - [lyeoni/pytorch_pretrained_bert] [Docker image with pyotrch and pretrained_bert](https://cloud.docker.com/repository/docker/lyeoni/pytorch_pretrained_bert)
