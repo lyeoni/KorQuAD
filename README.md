@@ -1,12 +1,26 @@
 # KorQuAD
 [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) repository contains op-for-op PyTorch reimplementations, pre-trained models and fine-tuning examples for Google's BERT model.
-And as a result of submission using the **run_squad.py** code provided by [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) repository, it ranked 31st in the test set with EM= 71.11, F1= 89.34, respectively, as shown below. (2019.06.05)
+And as a result of submission using the **run_squad.py** code provided by [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) repository, it ranked 29th in the test set with EM= 71.14, F1= 89.61, respectively, as shown below. (2019.06.11)
 
 <p align="center">
-<img height=50 src="https://github.com/lyeoni/KorQuAD/blob/master/images/leaderboard.png" />
+<img height=50 src="https://github.com/lyeoni/KorQuAD/blob/master/images/submission-2.png" />
 </p>
 
 A trained BERT model is publicly available. So, I'm going to cover **the process of submitting** a model and result for official evaluation on KorQuAD. Once your model has been evaluated officially, your scores will be added to the [leaderboard](https://korquad.github.io/). Thus I would assume you already completed model training in KorQuAD, and have a trained model archive.
+
+## Overview
+A pre-trained language model, **BERT**, is publicly available. For KorQuAD submission, what you have to do is to **fine-tune** the pre-trained BERT model on KorQuAD. And fine-tuning can be done simply by running `run_squad.py` (in [here](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py)) on the KorQuAD dataset.
+
+And, even if you fine-tune BERT with the default hyper-parameters in `run_squad.py`, we can get the following results (It's a score that can be ranked in the 30th grade, based on June 2019):
+```
+{"exact_match": 70.03810183581572, "f1": 89.75329211535801}
+```
+
+<p align="center">
+<img height=50 src="https://github.com/lyeoni/KorQuAD/blob/master/images/submission-1.png" />
+</p>
+
+<br>
 
 ## Submission Process
 To get official scores on the KorQuAD test set, we must submit(or upload) our model to the [CodaLab](https://worksheets.codalab.org/). This is because the integrity of test results should be preserved.
@@ -42,7 +56,7 @@ Click the `New Worksheet` in the upper-right corner and name your worksheet.
 Begin by uploading archive for the trained model onto Codalab.
 
 For example, I trained (BERT) model using `run_squad.py` code from [huggingface/pytorch-pretrained-BERT repository](https://github.com/huggingface/pytorch-pretrained-BERT), and the archive of trained model consists of the following:
-- run_korquad.py : python script to generate the predictions
+- run_squad.py : python script to generate the predictions
 - vocab.txt : vocabulary file
 - config.json : a configuration file for the model
 - pytorch_model.bin : a PyTorch dump of a trained BERT model (saved with the usual torch.save())
@@ -126,7 +140,7 @@ CodaLab> cl run :check_cuda.py "python check_cuda.py" --request-docker-image lye
 
 **The final command to generate the predictions on the dev set is like belows.**
 ```
-CodaLab> cl run :config.json :vocab.txt :pytorch_model.bin :KorQuAD_v1.0_dev.json :run_korquad.py "python run_korquad.py KorQuAD_v1.0_dev.json predictions.json" -n run-predictions --request-docker-image lyeoni/pytorch_pretrained_bert --request-gpus 1 --request-memory 11g
+CodaLab> cl run :config.json :vocab.txt :pytorch_model.bin :KorQuAD_v1.0_dev.json :run_squad.py "python run_squad.py KorQuAD_v1.0_dev.json predictions.json" -n run-predictions --request-docker-image lyeoni/pytorch_pretrained_bert --request-gpus 1 --request-memory 11g
 ```
 
 <br>
