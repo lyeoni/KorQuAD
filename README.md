@@ -1,6 +1,6 @@
 # KorQuAD
 [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) repository contains op-for-op PyTorch reimplementations, pre-trained models and fine-tuning examples for Google's BERT model.
-And as a result of submission using the **run_squad.py** code provided by [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) repository, it ranked 29th in the test set with EM= 71.14, F1= 89.61, respectively, as shown below. (2019.06.11)
+And as a result of submission using the run_squad.py code provided by [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) repository, it ranked 29th in the test set with EM= 71.14, F1= 89.61, respectively, as shown below. (2019.06.11)
 
 <p align="center">
 <img height=50 src="https://github.com/lyeoni/KorQuAD/blob/master/images/submission-2.png" />
@@ -15,10 +15,6 @@ And, even if you fine-tune BERT with the default hyper-parameters in `run_squad.
 ```
 {"exact_match": 70.03810183581572, "f1": 89.75329211535801}
 ```
-
-<p align="center">
-<img height=50 src="https://github.com/lyeoni/KorQuAD/blob/master/images/submission-1.png" />
-</p>
 
 <br>
 
@@ -162,9 +158,7 @@ Once this succeeds, you should see the scores for your model appended to the wor
 <br>
 
 ### 5. Submission
-Follow the submission guide provided in the official site.
-
-This step requires only a formatted descriptions(e.g., model name, your name, institution, etc.) to add an official leaderboard.
+Follow the submission guide provided in the official site. This step requires only a formatted descriptions(e.g., model name, your name, institution, etc.) to add an official leaderboard.
 
 - [KorQuAD Submission Guide (English Ver.)](https://worksheets.codalab.org/worksheets/0xee93409b823f436d88741ab115403559/)
 - [KorQuAD Submission Guide (Korean Ver.)](https://worksheets.codalab.org/worksheets/0x7b06f2ebd0584748a3a281018e7d19b0/)
