@@ -16,14 +16,10 @@ And, even if you fine-tune BERT with the default hyper-parameters in `run_squad.
 {"exact_match": 70.03810183581572, "f1": 89.75329211535801}
 ```
 
-<br>
-
 ## Submission Process
 To get official scores on the KorQuAD test set, we must submit(or upload) our model to the [CodaLab](https://worksheets.codalab.org/). This is because the integrity of test results should be preserved.
 
 Here's a detailed process that guides you through the official evaluation of our model.
-
-<br>
 
 ### 0. Create a CodaLab account
 You can create a CodaLab account [here](https://worksheets.codalab.org/).
@@ -163,8 +159,6 @@ Follow the submission guide provided in the official site. This step requires on
 - [KorQuAD Submission Guide (English Ver.)](https://worksheets.codalab.org/worksheets/0xee93409b823f436d88741ab115403559/)
 - [KorQuAD Submission Guide (Korean Ver.)](https://worksheets.codalab.org/worksheets/0x7b06f2ebd0584748a3a281018e7d19b0/)
 
-<br>
-
 ## Appendix
 - In CodaLab, each run has a state, which evolves through the following values:
   - `created` : initial state
@@ -172,8 +166,6 @@ Follow the submission guide provided in the official site. This step requires on
   - `preparing` : launch a worker just for this run, waiting for it
   - `running` : a worker is running the command
   - `ready/failed` : terminal states corresponding to a successful or unsuccessful run
-
-<br>
 
 ## References
 - [LG CNS AI Research Team] [KorQuAD, The Korean Question Answering Dataset](https://korquad.github.io/)
