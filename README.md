@@ -16,6 +16,24 @@ And, even if you fine-tune BERT with the default hyper-parameters in `run_squad.
 {"exact_match": 70.03810183581572, "f1": 89.75329211535801}
 ```
 
+## BERT Fine-tuning
+Below table shows the results of the BERT models fine-tuned with various hyper-parameters.
+
+- Model: model name with detailed description
+- #steps: number of optimization steps in training
+- EM (Exact Match): ratio of accurate prediction to actualanswer text
+- F1: score on how the actual answer text overlaps with the prediction
+
+|Model|#stpes|EM(dev)|F1(dev)|
+|---|---:|---:|---:|
+|BERT-Multilingual - _baseline_ ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-default.txt))|7,587|||
+|BERT-Multilingual - _baseline_ (+ max_seq_length=512) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-1.txt))|6,336|||
+|BERT-Multilingual - _baseline_ (+ train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-2.txt))|15,174|70.159|89.818|
+|BERT-Multilingual - _baseline_ (+ max_seq_length=512, train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-3.txt))|12,669|69.830|89.407|
+
+<!-- |BERT-Multilingual(max_seq_length=512)|70.107|90.026|29th (2nd submission)|
+|BERT-Multilingual(max_seq_length=512, train_batch_size=16)|70.107|89.613|-| --> 
+
 ## Submission Process
 To get official scores on the KorQuAD test set, we must submit(or upload) our model to the [CodaLab](https://worksheets.codalab.org/). This is because the integrity of test results should be preserved.
 
@@ -166,13 +184,6 @@ Follow the submission guide provided in the official site. This step requires on
   - `preparing` : launch a worker just for this run, waiting for it
   - `running` : a worker is running the command
   - `ready/failed` : terminal states corresponding to a successful or unsuccessful run
-
-<!-- - What I trained:
-  |Model|EM(dev)|F1(dev)|ranked|
-  |---|---|---|---|
-  |BERT-Multilingual(max_seq_length=512)|70.107|90.026|29th (2nd submission)|
-  |BERT-Multilingual(max_seq_length=512, train_batch_size=16)|70.107|89.613|-| -->
-
 
 ## References
 - [LG CNS AI Research Team] [KorQuAD, The Korean Question Answering Dataset](https://korquad.github.io/)
