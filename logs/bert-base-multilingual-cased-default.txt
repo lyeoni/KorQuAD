@@ -1,0 +1,40 @@
+$ python run_squad.py \
+	--bert_model bert-base-multilingual-cased \
+       	--do_train \
+	--do_predict \
+	--train_file KorQuAD_v1.0_train.json \
+	--predict_file KorQuAD_v1.0_dev.json \
+	--output_dir res
+Namespace(bert_model='bert-base-multilingual-cased', do_lower_case=False, do_predict=True, do_train=True, doc_stride=128, fp16=False, gradient_accumulation_steps=1, learning_rate=5e-05, local_rank=-1, loss_scale=0, max_answer_length=30, max_query_length=64, max_seq_length=384, n_best_size=20, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=3.0, output_dir='res', predict_batch_size=8, predict_file='KorQuAD_v1.0_dev.json', seed=42, server_ip='', server_port='', train_batch_size=32, train_file='KorQuAD_v1.0_train.json', verbose_logging=False, version_2_with_negative=False, warmup_proportion=0.1)
+06/13/2019 01:21:27 - INFO - __main__ -   device: cuda n_gpu: 8, distributed training: False, 16-bits training: False
+06/13/2019 01:21:28 - INFO - pytorch_pretrained_bert.tokenization -   loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-multilingual-cased-vocab.txt from cache at /home/lyeoni/.pytorch_pretrained_bert/96435fa287fbf7e469185f1062386e05a075cadbf6838b74da22bf64b080bc32.99bcd55fc66f4f3360bc49ba472b940b8dcf223ea6a345deb969d607ca900729
+06/13/2019 01:21:51 - INFO - pytorch_pretrained_bert.modeling -   loading archive file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-multilingual-cased.tar.gz from cache at /home/lyeoni/.pytorch_pretrained_bert/distributed_-1/731c19ddf94e294e00ec1ba9a930c69cc2a0fd489b25d3d691373fae4c0986bd.4e367b0d0155d801930846bb6ed98f8a7c23e0ded37888b29caa37009a40c7b9
+06/13/2019 01:21:51 - INFO - pytorch_pretrained_bert.modeling -   extracting archive file /home/lyeoni/.pytorch_pretrained_bert/distributed_-1/731c19ddf94e294e00ec1ba9a930c69cc2a0fd489b25d3d691373fae4c0986bd.4e367b0d0155d801930846bb6ed98f8a7c23e0ded37888b29caa37009a40c7b9 to temp dir /tmp/tmpq6ey8w4n
+06/13/2019 01:21:58 - INFO - pytorch_pretrained_bert.modeling -   Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "directionality": "bidi",
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pooler_fc_size": 768,
+  "pooler_num_attention_heads": 12,
+  "pooler_num_fc_layers": 3,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "type_vocab_size": 2,
+  "vocab_size": 119547
+}
+
+06/13/2019 01:22:04 - INFO - pytorch_pretrained_bert.modeling -   Weights of BertForQuestionAnswering not initialized from pretrained model: ['qa_outputs.bias', 'qa_outputs.weight']
+06/13/2019 01:22:04 - INFO - pytorch_pretrained_bert.modeling -   Weights from pretrained model not used in BertForQuestionAnswering: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
+06/13/2019 01:22:07 - INFO - __main__ -   ***** Running training *****
+06/13/2019 01:22:07 - INFO - __main__ -     Num orig examples = 60407
+06/13/2019 01:22:07 - INFO - __main__ -     Num split examples = 80917
+06/13/2019 01:22:07 - INFO - __main__ -     Batch size = 32
+06/13/2019 01:22:07 - INFO - __main__ -     Num steps = 7587
+
