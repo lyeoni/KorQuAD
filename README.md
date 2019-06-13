@@ -13,7 +13,8 @@ A pre-trained language model, **BERT**, is publicly available. For KorQuAD submi
 
 And, even if you fine-tune BERT with the default hyper-parameters in `run_squad.py`, we can get the following results (It's a score that can be ranked in the 30th grade, based on June 2019):
 ```
-{"exact_match": 70.03810183581572, "f1": 89.75329211535801}
+$ python evaluate-v1.0.py KorQuAD_v1.0_dev.json predictions.json
+{"exact_match": 70.29788708001385, "f1": 90.08062112089534}
 ```
 
 ## BERT Fine-tuning
@@ -26,8 +27,8 @@ Below table shows the results of the BERT models fine-tuned with various hyper-p
 
 |Model|#stpes|EM(dev)|F1(dev)|
 |---|---:|---:|---:|
-|BERT-Multilingual - _baseline_ ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-default.txt))|7,587|||
-|BERT-Multilingual - _baseline_ (+ max_seq_length=512) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-1.txt))|6,336|||
+|BERT-Multilingual - _baseline_ ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-default.txt))|7,587|70.298|90.081|
+|BERT-Multilingual - _baseline_ (+ max_seq_length=512) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-1.txt))|6,336|70.80|90.104|
 |BERT-Multilingual - _baseline_ (+ train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-2.txt))|15,174|70.159|89.818|
 |BERT-Multilingual - _baseline_ (+ max_seq_length=512, train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-3.txt))|12,669|69.830|89.407|
 
