@@ -1,3 +1,12 @@
+$ python run_squad.py \
+	--bert_model bert-base-multilingual-cased \
+       	--do_train \
+	--do_predict \
+	--train_file KorQuAD_v1.0_train.json \
+	--predict_file KorQuAD_v1.0_dev.json \
+	--max_seq_length 512 \
+	--train_batch_size 16 \
+	--output_dir res
 Namespace(bert_model='bert-base-multilingual-cased', do_lower_case=False, do_predict=True, do_train=True, doc_stride=128, fp16=False, gradient_accumulation_steps=1, learning_rate=5e-05, local_rank=-1, loss_scale=0, max_answer_length=30, max_query_length=64, max_seq_length=512, n_best_size=20, no_cuda=False, null_score_diff_threshold=0.0, num_train_epochs=3.0, output_dir='res', predict_batch_size=8, predict_file='KorQuAD_v1.0_dev.json', seed=42, server_ip='', server_port='', train_batch_size=16, train_file='KorQuAD_v1.0_train.json', verbose_logging=False, version_2_with_negative=False, warmup_proportion=0.1)
 06/12/2019 08:10:08 - INFO - __main__ -   device: cuda n_gpu: 8, distributed training: False, 16-bits training: False
 06/12/2019 08:10:09 - INFO - pytorch_pretrained_bert.tokenization -   loading vocabulary file https://s3.amazonaws.com/models.huggingface.co/bert/bert-base-multilingual-cased-vocab.txt from cache at /home/lyeoni/.pytorch_pretrained_bert/96435fa287fbf7e469185f1062386e05a075cadbf6838b74da22bf64b080bc32.99bcd55fc66f4f3360bc49ba472b940b8dcf223ea6a345deb969d607ca900729
