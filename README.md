@@ -31,6 +31,10 @@ Below table shows the results of the BERT models fine-tuned with various hyper-p
 |BERT-Multilingual - _baseline_ (+ max_seq_length=512) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-1.txt))|6,336|70.80|90.104|
 |BERT-Multilingual - _baseline_ (+ train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-2.txt))|15,174|70.159|89.818|
 |BERT-Multilingual - _baseline_ (+ max_seq_length=512, train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-3.txt))|12,669|69.830|89.407|
+|||||
+|BERT-Multilingual - _baseline_ (+ learning_rate=3e-5) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-4.txt))|7,587|70.419|90.241|
+|BERT-Multilingual - _baseline_ (+ learning_rate=3e-5, train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-5.txt))|15,174|70.229|90.114|
+
 
 <!-- |BERT-Multilingual(max_seq_length=512)|70.107|90.026|29th (2nd submission)|
 |BERT-Multilingual(max_seq_length=512, train_batch_size=16)|70.107|89.613|-| --> 
