@@ -33,15 +33,15 @@ Below table shows the results of the BERT models fine-tuned with various hyper-p
 |**_change train batch size_**||||
 |BERT-Multilingual - _baseline_ (+ train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-2.txt))|15,174|70.159|89.818|
 |BERT-Multilingual - _baseline_ (+ max_seq_length=512, train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-3.txt))|12,669|69.830|89.407|
-|**_change learning-rate to 3e-5_**||||
+|**_change learning-rate_**||||
 |BERT-Multilingual - _baseline_ (+ learning_rate=3e-5) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-4.txt))|7,587|70.419|90.241|
 |BERT-Multilingual - _baseline_ (+ learning_rate=3e-5, train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-5.txt))|15,174|70.229|90.114|
 |BERT-Multilingual - _baseline_ (+ max_seq_length=512, learning_rate=3e-5)|6,336|**70.644**|**90.246**|
 |BERT-Multilingual - _baseline_ (+ max_seq_length=512, learning_rate=3e-5, train_batch_size=16)|12,669|70.419|90.179|
 
 
-### Tips for hyper-parameter tuning
-- `pre-trained model` : `bert-large-cased` is not recommended
+Tips for hyper-parameter tuning
+- `pre-trained model` : `bert-large-cased`, pre-trained model, is not recommended
 - `num_train_epochs` : set to default value
 - `learning rate` : the smaller, the better
 
