@@ -11,7 +11,7 @@ A trained BERT model is publicly available. So, I'm going to cover **the process
 ## Overview
 A pre-trained language model, **BERT**, is publicly available. For KorQuAD submission, what you have to do is to **fine-tune** the pre-trained BERT model on KorQuAD. And fine-tuning can be done simply by running `run_squad.py` (in [here](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py)) on the KorQuAD dataset.
 
-And, even if you fine-tune BERT with the default hyper-parameters in `run_squad.py`, we can get the following results (It's a score that can be ranked in the 30th grade, based on June 2019):
+And, even if you fine-tune BERT with the default hyper-parameters in [`run_squad.py`](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py), we can get the following results (It's a score that can be ranked in the 30th grade, based on June 2019):
 ```
 $ python evaluate-v1.0.py KorQuAD_v1.0_dev.json predictions.json
 {"exact_match": 70.29788708001385, "f1": 90.08062112089534}
@@ -70,7 +70,7 @@ Click the `New Worksheet` in the upper-right corner and name your worksheet.
 ### 2. Upload trained model with source code
 Begin by uploading archive for the trained model onto Codalab.
 
-For example, I trained (BERT) model using `run_squad.py` code from [huggingface/pytorch-pretrained-BERT repository](https://github.com/huggingface/pytorch-pretrained-BERT), and the archive of trained model consists of the following:
+For example, I trained (BERT) model using [`run_squad.py`](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) code from [huggingface/pytorch-pretrained-BERT repository](https://github.com/huggingface/pytorch-pretrained-BERT), and the archive of trained model consists of the following:
 - run_squad.py : python script to generate the predictions
 - vocab.txt : vocabulary file
 - config.json : a configuration file for the model
@@ -81,6 +81,8 @@ CodaLab requires us that the prediction python script should run with the follow
 ```
 CodaLab> python <path-to-prediction-python-script> <input-data-json-file> <output-prediction-json-file>
 ```
+
+If you use [`run_squad.py`](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) code from [huggingface/pytorch-pretrained-BERT repository](https://github.com/huggingface/pytorch-pretrained-BERT) for training, and have difficulty modifying this to the above format, just use `run_squad_for_submission.py` in this repository. It runs with the arguments required by CodaLab, and generates predictions. And it should be in the same place as the archive of a trained model (vocab.txt, config.json, pytorch_model.bin).
 
 <br>
 
