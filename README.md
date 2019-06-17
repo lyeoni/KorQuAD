@@ -20,24 +20,30 @@ $ python evaluate-v1.0.py KorQuAD_v1.0_dev.json predictions.json
 ## BERT Fine-tuning
 Below table shows the results of the BERT models fine-tuned with various hyper-parameters.
 
-- Model: model name with detailed description
-- #steps: number of optimization steps in training
-- EM (Exact Match): ratio of accurate prediction to actualanswer text
-- F1: score on how the actual answer text overlaps with the prediction
+- Model : model name with detailed description
+- #steps : number of optimization steps in training
+- EM (Exact Match) : ratio of accurate prediction to actualanswer text
+- F1 : score on how the actual answer text overlaps with the prediction
 
 |Model|#stpes|EM(dev)|F1(dev)|
 |---|---:|---:|---:|
+|**_change maximum sequence length_**||||
 |BERT-Multilingual - _baseline_ ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-default.txt))|7,587|70.298|90.081|
 |BERT-Multilingual - _baseline_ (+ max_seq_length=512) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-1.txt))|6,336|70.80|90.104|
+|**_change train batch size_**||||
 |BERT-Multilingual - _baseline_ (+ train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-2.txt))|15,174|70.159|89.818|
 |BERT-Multilingual - _baseline_ (+ max_seq_length=512, train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-3.txt))|12,669|69.830|89.407|
-|||||
+|**_change learning-rate to 3e-5_**||||
 |BERT-Multilingual - _baseline_ (+ learning_rate=3e-5) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-4.txt))|7,587|70.419|90.241|
 |BERT-Multilingual - _baseline_ (+ learning_rate=3e-5, train_batch_size=16) ([description](https://github.com/lyeoni/KorQuAD/blob/master/logs/bert-base-multilingual-cased-5.txt))|15,174|70.229|90.114|
+|BERT-Multilingual - _baseline_ (+ max_seq_length=512, learning_rate=3e-5)|6,336|**70.644**|**90.246**|
+|BERT-Multilingual - _baseline_ (+ max_seq_length=512, learning_rate=3e-5, train_batch_size=16)|12,669|70.419|90.179|
 
 
-<!-- |BERT-Multilingual(max_seq_length=512)|70.107|90.026|29th (2nd submission)|
-|BERT-Multilingual(max_seq_length=512, train_batch_size=16)|70.107|89.613|-| --> 
+### Tips for hyper-parameter tuning
+- `pre-trained model` : `bert-large-cased` is not recommended
+- `num_train_epochs` : set to default value
+- `learning rate` : the smaller, the better
 
 ## Submission Process
 To get official scores on the KorQuAD test set, we must submit(or upload) our model to the [CodaLab](https://worksheets.codalab.org/). This is because the integrity of test results should be preserved.
@@ -203,3 +209,4 @@ Follow the submission guide provided in the official site. This step requires on
 - [huggingface/pytorch-pretrained-BERT] [PyTorch Pretrained BERT: The Big & Extending Repository of pretrained Transformers](https://github.com/huggingface/pytorch-pretrained-BERT)
 - [huggingface/pytorch-pretrained-BERT] [Fixing issue "Training beyond specified 't_total' steps with schedule 'warmup_linear'" reported in #556 #604](https://github.com/huggingface/pytorch-pretrained-BERT/pull/604)
 - [lyeoni/pytorch_pretrained_bert] [Docker image with pyotrch and pretrained_bert](https://cloud.docker.com/repository/docker/lyeoni/pytorch_pretrained_bert)
+- [pbaumgartner/pytorch-bert] [pytorch-bert-image](https://hub.docker.com/r/pbaumgartner/pytorch-bert/dockerfile)
