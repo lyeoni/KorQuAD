@@ -1,6 +1,6 @@
 # KorQuAD
 [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT) repository contains op-for-op PyTorch reimplementations, pre-trained models and fine-tuning examples for Google's BERT model.
-And as a result of submission using the run_squad.py code provided by [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) repository, it ranked 29th in the test set with EM= 71.14, F1= 89.61, respectively, as shown below. (2019.06.11)
+And as a result of submission using the run_squad.py code provided by [huggingface/pytorch-pretrained-BERT](https://github.com/huggingface/pytorch-pretrained-BERT/blob/master/examples/run_squad.py) repository, it ranked 30th in the test set with EM= 71.47, F1= 89.71, respectively, as shown below. (2019.06.17)
 
 <p align="center">
 <img height=50 src="https://github.com/lyeoni/KorQuAD/blob/master/images/submission-2.png" />
